@@ -1,0 +1,19 @@
+{
+    "cluster": "iot2",
+    "serviceName": "vehicle-111",
+    "taskDefinition": "mbta_vehicles",
+    "desiredCount": 1,
+    "launchType": "EC2",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 50
+    },
+    "placementConstraints": [],
+    "placementStrategy": [
+            {
+                "type": "spread",
+                "field": "instanceId"
+            }
+        ],
+        "schedulingStrategy": "REPLICA"
+}

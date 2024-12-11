@@ -1,0 +1,25 @@
+{
+    "family": "mbta_vehicles",
+    "containerDefinitions": [
+        {
+            "name": "container_1",
+            "image": "<aws-id>.dkr.ecr.eu-north-1.amazonaws.com/mbta:latest",
+            "memory": 256,
+            "cpu": 256,
+            "essential": true,
+            "environment": [
+                {"name": "VID", "value": "y1928"},
+                {"name": "RID", "value":  "111" },
+                {"name": "USERNAME", "value": "<USERNAME>"},
+                {"name": "PASSWORD", "value": "<PASSWORD>"},
+                {"name": "INFLUX_DB",  "value": "<EC2_INFLUXDB_IP>"},
+                {"name": "DEBUG_DATA_FLOW", "value": "true"},
+                {"name": "API_KEY", "value": "<API_KEY>"}
+            ]
+        }
+    ],
+    "requiresCompatibilities": ["EC2"],
+    "networkMode": "bridge",
+    "cpu": "356",
+    "memory": "512"
+}

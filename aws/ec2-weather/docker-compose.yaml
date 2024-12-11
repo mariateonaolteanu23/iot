@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  weather:
+    image: weather
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    network_mode: "host"
+    env_file:
+      - api.env
+    restart: unless-stopped
